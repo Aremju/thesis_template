@@ -34,28 +34,28 @@ The main components of the template are:
    git clone <repository-url>
    cd <repository-name>
    
-2. Update Title Page:
+2. **Update Title Page**:
 
 - Open main.tex and edit the title, author name, and other details on the title page.
 
-3. Modify Sections:
+3. **Modify Sections**:
 
 - Edit the files in the src/ directory to include your content. Each file represents a section of your thesis.
 - Ensure you keep the same file names (e.g., 1_introduction.tex, 2_basics.tex, etc.) for proper compilation.
 
-4. Add Images:
+4. **Add Images**:
 
 - Place your images in the images/ directory and update the paths in main.tex as needed.
 
-5. Citations and References:
+5. **Citations and References**:
 
 - Use the references.bib file to manage your bibliography. You can add citations in your text using the \cite{} command.
 
-6. Compile the Document:
+6. **Compile the Document**:
 
 - Use your LaTeX editor to compile main.tex. This will generate a PDF of your thesis.
 
-7. Check the Output:
+7. **Check the Output**:
 
 - Open the generated PDF to ensure everything is formatted correctly.
 
