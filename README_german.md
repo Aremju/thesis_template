@@ -34,23 +34,23 @@ Die Hauptkomponenten der Vorlage sind:
    git clone <repository-url>
    cd <repository-name>
    
-2. Titelblatt aktualisieren:
+2. **Titelblatt aktualisieren**:
 - Öffnen Sie main.tex und bearbeiten Sie den Titel, den Autorennamen und andere Details auf dem Titelblatt.
 
-3. Abschnitte modifizieren:
+3. **Abschnitte modifizieren**:
 - Bearbeiten Sie die Dateien im Verzeichnis src/, um Ihre Inhalte einzufügen. Jede Datei stellt einen Abschnitt Ihrer Thesis dar.
 - Stellen Sie sicher, dass Sie die gleichen Dateinamen (z. B. 1_introduction.tex, 2_basics.tex usw.) beibehalten, damit die Kompilierung korrekt funktioniert.
 
-4. Bilder hinzufügen:
+4. **Bilder hinzufügen**:
 - Legen Sie Ihre Bilder im Verzeichnis images/ ab und aktualisieren Sie die Pfade in main.tex nach Bedarf.
 
-5. Zitationen und Referenzen:
+5. **Zitationen und Referenzen**:
 - Verwenden Sie die Datei references.bib zur Verwaltung Ihrer Bibliografie. Sie können Zitationen in Ihrem Text mit dem Befehl \cite{} hinzufügen.
 
-6. Dokument kompilieren:
+6. **Dokument kompilieren**:
 - Verwenden Sie Ihren LaTeX-Editor, um main.tex zu kompilieren. Dies erzeugt ein PDF Ihrer Thesis.
 
-7. Überprüfen Sie die Ausgabe:
+7. **Überprüfen Sie die Ausgabe**:
 - Öffnen Sie das erzeugte PDF, um sicherzustellen, dass alles korrekt formatiert ist.
 
 ### Anpassungen
