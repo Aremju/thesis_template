@@ -56,7 +56,7 @@ Die Hauptkomponenten der Vorlage sind:
 ### Anpassungen
 - **Kopf- und Fußzeile**: Die Vorlage verwendet das Paket fancyhdr zur Anpassung von Kopf- und Fußzeilen.
 **Schriftarten und Abstände**: Die Vorlage ist so konfiguriert, dass sie die Schriftart Arial und 1,5-zeiligen Abstand verwendet.
-- Kapitel- und Abschnittsformatierung: Ändern Sie die titleformat-Befehle im Präambel, um die Formatierung von Kapiteln und Abschnitten anzupassen.
+- **Kapitel- und Abschnittsformatierung**: Ändern Sie die titleformat-Befehle im Präambel, um die Formatierung von Kapiteln und Abschnitten anzupassen.
 
 ## Fazit
 Diese Vorlage bietet eine solide Grundlage für Ihre Thesis. Fühlen Sie sich frei, die Stile und Formate nach Ihren Bedürfnissen anzupassen. Viel Erfolg beim Schreiben Ihrer Thesis!
