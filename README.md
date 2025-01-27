@@ -1,4 +1,4 @@
-# Template in LaTeX
+# LaTex-Template
 
 Dies ist ein LaTeX-Template, welches für Prüfungen, verschiedenste Ausarbeitungen, wissenschaftliche Arbeiten (Bachelorarbeit, Masterarbeit, Paper, etc.) verwendet werden kann. Es enthält verschiedene Kapitel, Beispiele, Anhänge sowie notwendige Konfigurations- und Build-Dateien.
 
