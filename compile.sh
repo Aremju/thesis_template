@@ -9,6 +9,20 @@ OUTPUT_FOLDER="out"
 # Desired name for the final PDF
 FINAL_PDF_NAME="musterarbeit_max_mustermann.pdf"
 
+# Define patterns for generated files
+generated_files_patterns=(
+    "*.aux" "*.bbl" "*.blg" "*.log" "*.out" "*.toc" "*.lof" "*.lot"
+    "*.fdb_latexmk" "*.fls" "*.synctex.gz"
+)
+
+# Clean up all previously generated files in the project directory
+echo "Cleaning up previously generated files..."
+for pattern in "${generated_files_patterns[@]}"; do
+    find . -type f -name "$pattern" -exec rm -f {} + 2>/dev/null
+done
+
+echo "Cleanup complete. Starting build process..."
+
 # Run the commands to compile the LaTeX document and generate the PDF
 pdflatex $MAIN_FILE.tex
 bibtex $MAIN_FILE.aux
