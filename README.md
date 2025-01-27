@@ -1,75 +1,98 @@
-# Thesis Template for LaTeX
+# Template in LaTeX
 
-This repository contains a LaTeX template for writing a Bachelor’s or Master’s thesis. It is designed to meet common formatting requirements while providing a clean and organized structure for your work.
+Dies ist ein LaTeX-Template, welches für Prüfungen, verschiedenste Ausarbeitungen, wissenschaftliche Arbeiten (Bachelorarbeit, Masterarbeit, Paper, etc.) verwendet werden kann. Es enthält verschiedene Kapitel, Beispiele, Anhänge sowie notwendige Konfigurations- und Build-Dateien.
 
-## Getting Started
+## Struktur und Commit-Konventionen
+Dieses Repository verwendet commitlint, um Commit-Nachrichten-Konventionen durchzusetzen. Die Konfiguration ist in der Datei `commitlintrc.json` definiert, und kann über IntelliJ genutzt werden.
 
-### Prerequisites
+### Commit-Nachricht-Format
+Die Commit-Nachricht sollte folgendem Format entsprechen:
 
-Before using this template, ensure that you have the following installed on your system:
+```
+<type>(<scope>): <subject>
+```
 
-1. **LaTeX Distribution**: 
-   - For Windows: [MiKTeX](https://miktex.org/)
-   - For macOS: [MacTeX](https://www.tug.org/mactex/)
-   - For Linux: Install TeX Live using your package manager.
+#### Mögliche Werte für `<type>`:
+- **feat**: Hinzufügen eines neuen Features (Kapitel, Sektionen, Anhänge)
+- **fix**: Beheben eines Bugs (z. B. LaTeX-Compiling-Probleme)
+- **docs**: Aktualisierung der Dokumentation (Referenzen, Metadaten)
+- **style**: Formatierung (z. B. Whitespaces, Layout-Korrekturen)
+- **refactor**: Verbesserung der Lesbarkeit des LaTeX-Codes
+- **build**: Änderungen am Build-Prozess (z. B. Wechsel von BibTeX zu Biber)
+- **chore**: Sonstige Aufgaben
+- **comment**: Kommentare, die von Prüfern hinterlassen wurden
 
-2. **Editor**: You can use any text editor, but it's recommended to use an integrated development environment (IDE) for LaTeX, such as:
-   - [TeXShop](http://pages.uoregon.edu/koch/texshop/)
-   - [Overleaf](https://www.overleaf.com/)
-   - [TeXworks](https://www.tug.org/texworks/)
+#### Mögliche Werte für `<scope>`:
+- **introduction**: Einleitung
+- **background**: Grundlagenkapitel
+- **concept**: Softwarekonzept
+- **implementation**: Implementierungskapitel
+- **evaluation**: Evaluationskapitel
+- **conclusion**: Fazit und Ausblick
+- **bibliography**: Literaturverzeichnis
+- **figures**: Abbildungen
+- **formatting**: Formatierung
+- **appendix**: Anhang
+- **vc**: Versionskontrolle
+- **infra**: Infrastruktur (GitHub-Actions)
 
-### Structure of the Template
+#### Weitere Regeln:
+- `<type>` und `<scope>` müssen klein geschrieben werden.
+- `<subject>` sollte in einfacher Gegenwartsform geschrieben sein und darf keine Großschreibung (außer Eigennamen) enthalten.
+- Die maximale Länge der Überschrift beträgt 72 Zeichen.
+- All das könnt ihr nach eurem Ermessen konfigurieren.
 
-The main components of the template are:
+### Beispiel für eine Commit-Nachricht:
+```
+feat(introduction): add motivation section
+```
 
-- **main.tex**: The main file where you can compile your thesis.
-- **src/**: A directory that contains various sections of your thesis, such as the introduction, methods, results, and conclusion.
-- **images/**: A directory for any images or logos you want to include in your thesis.
-- **references.bib**: A bibliography file for managing your references.
+## Einrichtung
+### Installation von LaTeX
 
-### Steps to Use the Template
+#### Ubuntu
+1. Öffne ein Terminal.
+2. Installiere `texlive-full` mit folgendem Befehl:
+   ```shell
+   sudo apt update && sudo apt install texlive-full
+   ```
 
-1. **Clone the Repository**: 
-   ```bash
-   git clone <repository-url>
-   cd <repository-name>
-   
-2. **Update Title Page**:
+#### Windows
+1. Lade den [TeX Live Installer](https://www.tug.org/texlive/windows.html) herunter.
+2. Folge den Installationsanweisungen, um `texlive-full` zu installieren.
 
-- Open main.tex and edit the title, author name, and other details on the title page.
+### IntelliJ IDE und Build-Skript
+Das Projekt kann mit dem Skript `compile.sh` gebaut werden. Es generiert das vollständige PDF-Dokument.
 
-3. **Modify Sections**:
+#### Verwendung in IntelliJ IDE:
+1. Öffne die IntelliJ IDE.
+2. Konfiguriere eine Run/Debug-Konfiguration:
+    - Script: `compile.sh`
+    - Arbeitsverzeichnis: Das Root-Verzeichnis des Projekts
+3. Führe das Skript aus, um das PDF zu generieren.
 
-- Edit the files in the src/ directory to include your content. Each file represents a section of your thesis.
-- Ensure you keep the same file names (e.g., 1_introduction.tex, 2_basics.tex, etc.) for proper compilation.
+```shell
+/bin/bash compile.sh
+```
 
-4. **Add Images**:
+## Kommentare hinzufügen
+Prüfer können Kommentare im LaTeX-Dokument hinzufügen. Diese Kommentare beginnen mit `%` und sind mit `TODO:` gekennzeichnet. Die Kommentare werden in der IDE hervorgehoben, sodass sie leicht auffindbar sind.
 
-- Place your images in the images/ directory and update the paths in main.tex as needed.
+#### Beispiel:
+```latex
+% TODO: Ergänzen Sie hier weitere Details zur Motivation
+```
 
-5. **Citations and References**:
+### Commit-Nachrichten für Kommentare
+Bei der Einreichung von Kommentaren muss die Commit-Nachricht folgendem Format entsprechen:
 
-- Use the references.bib file to manage your bibliography. You can add citations in your text using the \cite{} command.
+```
+comment(<chapter>): <commit-message starting with verb in simple present>
+```
 
-6. **Compile the Document**:
+#### Beispiel:
+```
+comment(introduction): suggest adding motivation details
+```
 
-- Use your LaTeX editor to compile main.tex. This will generate a PDF of your thesis.
-
-7. **Check the Output**:
-
-- Open the generated PDF to ensure everything is formatted correctly.
-
-### Customization
-- **Header and Footer**: The template uses the fancyhdr package for customizing headers and footers.
-- **Fonts and Spacing**: The template is configured to use Arial font and 1.5 line spacing.
-- **Chapter and Section** Formatting: Modify the titleformat commands in the preamble to change how chapters and sections are formatted.
-
-### Troubleshooting
-If you encounter any issues:
-
-- Ensure all packages are installed. You can do this through your LaTeX distribution’s package manager.
-- Check for typos in file names and paths.
-- Look at the compilation log for error messages to pinpoint issues.
-
-## Conclusion
-This template provides a solid foundation for your thesis. Feel free to modify the styles and formats to suit your needs. Good luck with your thesis writing!
+---

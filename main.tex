@@ -1,112 +1,110 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,12pt]{scrreprt}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage[left=3cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{setspace}
-\usepackage{tabto} % For text indentation
-\usepackage{lipsum} % For generating sample text
-\usepackage{titlesec} % For flexible chapter and section numbering
-\usepackage{tocloft} % For table of contents
+\onehalfspacing
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage{caption}
 
-% Page margins
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\renewcommand{\lstlistingname}{Abbildung}
+\captionsetup{justification=centering}
 
-% Font style
-\renewcommand{\rmdefault}{phv} % Arial as the default font
-\renewcommand{\sfdefault}{phv}
-
-% Line spacing
-\setstretch{1.5}
-
-% Header configuration
-\fancypagestyle{plain}{
-    \fancyhf{}
-    \fancyhead[L]{\nouppercase{\leftmark}} % Chapter number and title on the left in mixed case
-    \fancyhead[R]{\thepage} % Page number on the right
-    \renewcommand{\headrulewidth}{0.4pt} % Line at the top of the header
-    \renewcommand{\footrulewidth}{0pt} % No line at the bottom of the footer
+\geometry{
+    a4paper,
+    left=30mm,
+    right=25mm,
+    top=30mm,
+    bottom=30mm,
 }
 
-\fancypagestyle{main}{
-    \fancyhf{}
-    \fancyhead[L]{\nouppercase{\leftmark}} % Chapter number and title on the left
-    \fancyhead[R]{\thepage} % Page number on the right
-    \renewcommand{\headrulewidth}{0.4pt} % Line at the top of the header
+\onehalfspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Bachelorarbeit}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+\lstset{
+    basicstyle=\ttfamily,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    breaklines=true,
 }
 
-\pagestyle{main}
-
-% Chapter and section numbering configuration
-\titleformat{\chapter}[hang]{\bfseries\LARGE}{\thechapter.}{1em}{}
-\titleformat{\section}[hang]{\bfseries\Large}{\thesection.}{1em}{}
-\titleformat{\subsection}[hang]{\bfseries\large}{\thesubsection.}{1em}{}
-\titleformat{\subsubsection}[hang]{\bfseries\normalsize}{\thesubsubsection.}{1em}{}
-
-% Customizing header for sections and subsections
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thechapter.\ \chaptername}}
+\title{Beispiel-Titel}
+\author{Max Mustermann}
+\date{\today}
 
 \begin{document}
 
-% Title page
-\begin{titlepage}
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/musteruni_logo.png}\\[1.5cm] % Adjust path to university logo
-    {\LARGE \textbf{\underline{Titel der Arbeit}}}\\[1cm]
-    \textbf{Bachelorarbeit / Masterarbeit}\\[1cm]
-    \onehalfspacing % Reduced line spacing only on the title page
-    \raggedright
-    Verfasser:
-    \tabto{5cm} \textbf{Max Mustermann}\\
-    \tabto{5cm} Musterstraße 129\\
-    \tabto{5cm} 38195, Musterstadt\\[0.5cm]
-    Matrikelnummer: \tabto{5cm} XXXXXXX\\[0.5cm]
-    Studiengang: \tabto{5cm} Computer Science\\[0.5cm]
-    Fachbereich: \tabto{5cm} Musterstadt Campus\\[0.5cm]
-    Semester: \tabto{5cm} 7\\[0.5cm]
-    Erstprüfer: \tabto{5cm} Prof. Dr. Ing. Magnus Mustertyp\\[0.5cm]
-    Zweitprüfer: \tabto{5cm} Prof. Dr. Dr. rer. nat. Melvin Musterknabe\\[0.5cm]
-    Abgegeben am: \tabto{5cm} \today \\[1cm]
-    In Zusammenarbeit mit Musterfirma GmbH\\
-    Musterstraße 130, 38195 Musterstadt\\[1cm]
-    \hfill \includegraphics[width=0.3\textwidth]{images/arendt_company.png} % Adjust path to company logo
-    \singlespacing % Back to normal line spacing for the rest of the document
-\end{titlepage}
+    \begin{titlepage}
+        \centering
+        {\LARGE \textbf{\textsf{Beispiel-Titel}}} \\
+        [1cm]
 
-\newpage
+        \textbf{Verfasser: } \\
+        Max Mustermann \\
+        [0.5em]
+        \textbf{Matrikelnummer: } \\
+        1284263 \\
+        \vspace{0.5cm}
 
-% Task description
-\include{src/0_abstract}
+        \textbf{Hochschule: } \\
+        Hochschule Bielefeld \\
+        [0.5em]
+        \textbf{Fachbereich: } \\
+        Campus Minden \\
+        \vspace{0.5cm}
 
-% Declaration of authorship
-\chapter*{Eidesstattliche Erklärung}
-\addcontentsline{toc}{chapter}{Eidesstattliche Erklärung}
-Hiermit erkläre ich an Eides statt, dass ich die vorliegende Arbeit selbstständig und ohne fremde Hilfe verfasst habe, und dass ich keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Die Stellen der Arbeit, die anderen Quellen dem Wortlaut oder dem Sinn nach entnommen sind, habe ich als solche kenntlich gemacht.
+        \textbf{Erstprüferin: } \\
+        Prof.
+        Dr. Dr. rer. nat.
+        Martina Musterfrau \\
+        [0.5em]
+        \textbf{Zweitprüfer:} \\
+        Dipl. Inform. Moritz Mustertyp \\
+        \vspace{0.5cm}
 
-\vspace{3cm}
-\noindent
-Ort, Datum \hfill Unterschrift
+        \textbf{Studiengang:} \\
+        Bachelor of Science Informatik \\
+        \vspace{0.5cm}
 
-\newpage
+        \textbf{Projektart:} \\
+        Musterarbeit, Wintersemester 2024/2025 \\
+        \vspace{0.5cm}
 
-% Table of contents
-\tableofcontents
-\newpage
+        \textbf{Abgabedatum:} \\
+        \today \\
+        \vspace{1cm}
 
-% Text (including existing chapters)
-\include{src/1_introduction}
-\include{src/2_basics}
-\include{src/3_methods}
-\include{src/4_params}
-\include{src/5_results}
-\include{src/6_conclusion}
+    \end{titlepage}
 
-% Bibliography
-\bibliographystyle{IEEEtran}
-\bibliography{references}
-\addcontentsline{toc}{chapter}{Bibliography}
+    \tableofcontents
 
-\include{src/7_appendix}
+    \include{src/1_introduction}
+    \include{src/2_background}
+    \include{src/3_concept}
+    \include{src/4_implementation}
+    \include{src/5_conclusion}
+
+    \bibliographystyle{ieeetr}
+    \bibliography{main}
 
 \end{document}

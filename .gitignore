@@ -1,0 +1,10 @@
+.idea
+**/*.iml
+out/
+**/*.out
+**/*.log
+**/*.blg
+**/*.bbl
+**/*.aux
+**/*.pdf
+**/*.toc
